@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Restaurant Rezervasyon Sistemi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sistem Hakkında
+Restaurant Rezervasyon Sistemi, kullanıcıların masa rezervasyonlarını güvenli ve düzenli bir şekilde yönetmelerini sağlar. Sistem hem ön yüz (React) hem de arka uç (Spring Boot) tarafında veri güvenliği ve yönetimi sağlar. Admin paneli üzerinden tüm rezervasyon ve müşteri işlemleri takip edilebilir.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Temel Özellikler
 
-### `npm start`
+### 1. Rezervasyon Kuralları
+- Rezervasyonlar, planlanan rezervasyon saatinden **en fazla 1 saat öncesine kadar** yapılabilir.  
+- Rezervasyon saatinden **1 saat sonra** rezervasyon otomatik olarak "Tamamlandı" durumuna geçer.  
+- Aynı masaya aynı saat için birden fazla rezervasyon yapılamaz (**çakışmayı önleme**).  
+- Rezervasyonlar **en fazla 3 ay sonrasına kadar** yapılabilir.  
+- Geçmiş tarihli veya **çalışma saatleri dışında** rezervasyonlar kabul edilmez.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Müşteri Yönetimi
+- Daha önce rezervasyon yaptırmış müşterilerin bilgileri saklanır.  
+- Bir sonraki rezervasyonda, **telefon numarasıyla hızlı rezervasyon** yapılabilir.  
+- Müşteri isim güncellemeleri yalnızca **admin paneli** üzerinden yapılabilir.  
+- Rezervasyon sırasında **isim ve telefon numarası zorunludur**.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3. Veri Güvenliği ve Maskelenmesi
+- Hem backend hem frontend tarafında müşteri ve rezervasyon verileri **maskelenmiş** olarak görüntülenir.  
+- Admin panelinde veriler **maskelenmeden** tam olarak görüntülenebilir.  
 
-### `npm test`
+### 4. Tarih ve Döküm
+- Tüm rezervasyonlar ve müşteri kayıtlarının **oluşturulma tarihleri** tutulur.  
+- Veriler gerektiğinde **Excel dosyası olarak dışa aktarılabilir**.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 5. Admin Paneli
+- Admin paneli üzerinden **müşteri, rezervasyon ve masalar** kolayca yönetilebilir.  
+- Admin panelinde gelişmiş **filtreleme ve arama** seçenekleri mevcuttur.  
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Teknolojiler
+- **Backend:** Spring Boot, Spring Security, JPA, Hibernate  
+- **Frontend:** React.js, Bootstrap  
+- **Veritabanı:** H2 / MySQL (projeye göre)  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Notlar
+- Sistem, kullanıcı deneyimini ön planda tutar ve veri güvenliğini sağlar.  
+- Rezervasyon ve müşteri verileri her zaman güncel tutulur.  
+- Admin yetkisi olmayan kullanıcılar yalnızca maskelenmiş verilere erişebilir.  
