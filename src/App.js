@@ -386,6 +386,9 @@ const handlePhoneChange = async (e) => {
 
       {/* Rezervasyon Formu */}
       <h4 className="mb-3">Rezervasyon Formu</h4>
+        <p className="text-muted small mb-3">
+    Daha önce rezervasyon yaptıysanız, sadece telefon numaranızı girmeniz yeterlidir.
+  </p>
       <form className="mb-3 d-flex flex-wrap" onSubmit={handleSubmit}>
        <input
   type="text"
